@@ -1,5 +1,5 @@
 from tkinter import *
-from tkinter import ttk
+from tkinter.ttk import *
 from time import sleep as s
 import psutil as ps
 
@@ -29,10 +29,10 @@ containerTempoAtualiz = LabelFrame(containerOpt, text="Tempo de atualização do
 containerTempoAtualiz.pack()
 
 tempoAtualizacao = StringVar()
-cmbTempoAtualiz = ttk.Combobox(containerTempoAtualiz, textvariable=tempoAtualizacao)
+cmbTempoAtualiz = Combobox(containerTempoAtualiz, textvariable=tempoAtualizacao)
 cmbTempoAtualiz["values"] = ("1","3","5","10","15")
 cmbTempoAtualiz["state"] = "readonly"
-cmbTempoAtualiz.set(cmbTempoAtualiz["values"][2])
+cmbTempoAtualiz.set(cmbTempoAtualiz["values"][1])
 cmbTempoAtualiz.pack()
 
 # Campos da estrutura do desempenho ===============================================
