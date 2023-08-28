@@ -67,6 +67,7 @@ RAMTot = StringVar()
 RAMAtual = StringVar()
 RAMPercent = StringVar()
 
+# Variaveis de captura ===================================================
 dadoCPUFisc = ps.cpu_count(False)
 dadoCPULogc = ps.cpu_count(True)
 dadoCPUFreq = ps.cpu_freq(False).current
@@ -99,6 +100,7 @@ for coluna in colunas:
     
     indiceGrid += 1
 
+# Renderização da parte gráfica =================================================================
 while(True):
     dados[0][0].set(str(dadoCPUFisc))
     dados[0][1].set(str(dadoCPULogc))
