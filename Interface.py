@@ -42,7 +42,7 @@ tempoAtualizacao = StringVar()
 cmbTempoAtualiz = Combobox(containerTempoAtualiz, textvariable=tempoAtualizacao)
 cmbTempoAtualiz["values"] = ("1","3","5","10","15")
 cmbTempoAtualiz["state"] = "readonly"
-cmbTempoAtualiz.set(cmbTempoAtualiz["values"][1])
+cmbTempoAtualiz.set(cmbTempoAtualiz["values"][0])
 cmbTempoAtualiz.pack()
 
 # Campos da estrutura do desempenho ===============================================
@@ -67,22 +67,6 @@ RAMTot = StringVar()
 RAMAtual = StringVar()
 RAMPercent = StringVar()
 
-# Variaveis de captura ===================================================
-dadoCPUFisc = ps.cpu_count(False)
-dadoCPULogc = ps.cpu_count(True)
-dadoCPUFreq = ps.cpu_freq(False).current
-dadoCPUPercent = round(100-ps.cpu_times_percent(interval=1)[2],1)
-
-dadoHDNumParcs = len(ps.disk_partitions(True))
-dadoHDTotal = round((ps.disk_usage("/").total)*10**-9,2)
-dadoHDAtual = round((ps.disk_usage("/").used)*10**-9,2) 
-dadoHDPercent = ps.disk_usage("/").percent
-
-dadoRAMTot = round((ps.virtual_memory().total)*10**-9,2)
-dadoRAMAtual = round((ps.virtual_memory().used)*10**-9,2)
-dadoRAMPercent = ps.virtual_memory().percent
-
-
 dados = ((CPUFisc,CPULogc,CPUFreq,CPUPercent),(HDNumParcs,HDTotal,HDAtual,HDPercent),(RAMTot,RAMAtual,RAMPercent))
 
 indiceGrid = 0
@@ -102,6 +86,20 @@ for coluna in colunas:
 
 # Renderização da parte gráfica =================================================================
 while(True):
+    dadoCPUFisc = ps.cpu_count(False)
+    dadoCPULogc = ps.cpu_count(True)
+    dadoCPUFreq = ps.cpu_freq(False).current
+    dadoCPUPercent = round(100-ps.cpu_times_percent(interval=1)[2],1)
+
+    dadoHDNumParcs = len(ps.disk_partitions(True))
+    dadoHDTotal = round((ps.disk_usage("/").total)*10**-9,2)
+    dadoHDAtual = round((ps.disk_usage("/").used)*10**-9,2) 
+    dadoHDPercent = ps.disk_usage("/").percent
+
+    dadoRAMTot = round((ps.virtual_memory().total)*10**-9,2)
+    dadoRAMAtual = round((ps.virtual_memory().used)*10**-9,2)
+    dadoRAMPercent = ps.virtual_memory().percent
+
     dados[0][0].set(str(dadoCPUFisc))
     dados[0][1].set(str(dadoCPULogc))
     dados[0][2].set(str(dadoCPUFreq)+"MHz")
