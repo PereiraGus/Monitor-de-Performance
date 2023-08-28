@@ -33,7 +33,7 @@ tempoAtualizacao = StringVar()
 cmbTempoAtualiz = ttk.Combobox(containerTempoAtualiz, textvariable=tempoAtualizacao)
 cmbTempoAtualiz["values"] = ("1","3","5","10","15")
 cmbTempoAtualiz["state"] = "readonly"
-cmbTempoAtualiz.set(cmbTempoAtualiz["values"]["2"])
+cmbTempoAtualiz.set(cmbTempoAtualiz["values"][2])
 cmbTempoAtualiz.pack()
 
 # Campos da estrutura do desempenho ===============================================
