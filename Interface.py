@@ -6,8 +6,8 @@ import mysql.connector
 
 tDados = mysql.connector.connect(
     host="localhost",
-    user="gba",
-    password="2307",
+    user="acessoProducao",
+    password="urubu100",
     database="monitorDeDados"
 )
 
@@ -16,7 +16,7 @@ mycursor = tDados.cursor()
 root = Tk()
 root.title("Monitor de Performance")
 root.resizable(False,False)
-# root.iconbitmap("./assets/favicon.ico")
+root.iconbitmap("./assets/favicon.ico")
 
 # Informações do usuário ===============================================
 containerInfos = LabelFrame(root, text="Informações do sistema operacional")
@@ -122,4 +122,4 @@ while(True):
 
     tDados.commit()
 
-    print(mycursor.rowcount, "record inserted.")
+    print(mycursor.rowcount, "tupla inserida.")
