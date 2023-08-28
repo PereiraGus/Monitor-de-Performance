@@ -5,7 +5,6 @@ import psutil as ps
 
 root = Tk()
 root.title("Monitor de Performance")
-root.geometry("600x500")
 root.resizable(False,False)
 root.iconbitmap("./assets/favicon.ico")
 
