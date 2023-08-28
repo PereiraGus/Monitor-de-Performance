@@ -33,7 +33,7 @@ tempoAtualizacao = StringVar()
 cmbTempoAtualiz = ttk.Combobox(containerTempoAtualiz, textvariable=tempoAtualizacao)
 cmbTempoAtualiz["values"] = ("1","3","5","10","15")
 cmbTempoAtualiz["state"] = "readonly"
-cmbTempoAtualiz.set(cmbTempoAtualiz["values"][2])
+cmbTempoAtualiz.set(cmbTempoAtualiz["values"]["2"])
 cmbTempoAtualiz.pack()
 
 # Campos da estrutura do desempenho ===============================================
@@ -43,8 +43,6 @@ infos = (
 ("Processadores físicos","Processadores lógicos","Frequência","Percentual de uso"),
 ("Número de partições","Total","Uso atual","Percentual de uso"),
 ("Total","Uso atual","Percentual de uso"))
-
-vazio = StringVar()
 
 CPUFisc = StringVar()
 CPULogc = StringVar()
@@ -77,8 +75,7 @@ for coluna in colunas:
     
     indiceGrid += 1
 
-x = 1
-while(x == 1):
+while(True):
     dados[0][0].set(str(ps.cpu_count(False)))
     dados[0][1].set(str(ps.cpu_count(True)))
     dados[0][2].set(str(ps.cpu_freq(False).current)+"MHz")
