@@ -1,3 +1,7 @@
+# Nome do grupo: Plane-It
+#Nome do aluno: Gustavo Pereira Castro
+#RA do aluno: 02231052
+
 from tkinter import *
 from tkinter.ttk import *
 from tkinter.scrolledtext import ScrolledText
